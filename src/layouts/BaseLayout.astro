@@ -1,0 +1,42 @@
+---
+// Base layout with navigation and theme styles
+const { title = "Portfolio", description = "Welcome" } = Astro.props;
+import ForestBackground from "../components/ForestBackground.jsx";
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;700&family=Zen+Maru+Gothic:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <ForestBackground client:load />
+    <header class="site-header">
+      <nav class="nav">
+        <a class="brand" href="/">森のPortfolio</a>
+        <ul>
+          <li><a href="/">Welcome</a></li>
+          <li><a href="/history">学歴</a></li>
+          <li><a href="/skills">スキル</a></li>
+          <li><a href="/projects">プロジェクト</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <small>© {new Date().getFullYear()} Forest Portfolio</small>
+    </footer>
+  </body>
+</html>

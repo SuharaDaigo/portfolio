@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="プロジェクト | 森のPortfolio" description="制作物の紹介">
+  <section class="card">
+    <span class="badge">Projects</span>
+    <h1>プロジェクト</h1>
+    <div class="grid" style="margin-top:1rem">
+      <div class="project-item card">
+        <div class="project-thumb"></div>
+        <div>
+          <h3>Forest Landing</h3>
+          <p>Three.js と Framer Motion を使ったランディングページ。</p>
+        </div>
+      </div>
+      <div class="project-item card">
+        <div class="project-thumb"></div>
+        <div>
+          <h3>Astro Blog</h3>
+          <p>Astro で構築した軽量ブログサイト。</p>
+        </div>
+      </div>
+    </div>
+    <p style="color:#0009; margin-top:1rem">
+      ※ README.md に沿って実プロジェクトを追記してください。
+    </p>
+  </section>
+</BaseLayout>
