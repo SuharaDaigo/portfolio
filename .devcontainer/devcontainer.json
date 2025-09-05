@@ -1,0 +1,43 @@
+{
+    "name": "Astro Dev (Dockerfile)",
+    "build": {
+        "dockerfile": "../Dockerfile",
+        "context": "..",
+        "target": "dev",
+        "args": {
+            "NODE_ENV": "development"
+        }
+    },
+    "workspaceFolder": "/workspaces/app",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/app,type=bind,consistency=cached",
+    "containerUser": "node",
+    "remoteUser": "node",
+    "updateRemoteUserUID": true,
+    "features": {},
+    "forwardPorts": [
+        4321,
+        3000
+    ],
+    "portsAttributes": {
+        "4321": {
+            "label": "Astro dev",
+            "onAutoForward": "openPreview"
+        },
+        "3000": {
+            "label": "Astro preview",
+            "onAutoForward": "notify"
+        }
+    },
+    "mounts": [
+        "type=volume,source=npm-cache,target=/home/node/.npm"
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "astro-build.astro-vscode",
+                "dbaeumer.vscode-eslint",
+                "esbenp.prettier-vscode"
+            ]
+        }
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Astro: dev",
+            "type": "shell",
+            "command": "npm run dev -- --host",
+            "isBackground": true,
+            "problemMatcher": []
+        },
+        {
+            "label": "Astro: preview",
+            "type": "shell",
+            "command": "npm run preview -- --host",
+            "isBackground": true,
+            "problemMatcher": []
+        }
+    ]
+}
